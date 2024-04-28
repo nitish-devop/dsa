@@ -1,20 +1,24 @@
 function binarySearchIterative(arr, target) {
     let start = 0;
     let end = arr.length;
+    let result = -1;
 
     while(start <= end) {
         let mid = Math.floor((start + end) / 2);
 
-        if(arr[mid] == target) {
-            return mid;
-        }else if(arr[mid] < target) {
+        // if element found check its left part if any elements are there
+        if(arr[mid] === target) {
+            result = mid;
+            end = mid - 1;
+        }//if the target is greater ignore left half
+        else if(arr[mid] < target) {
             start = mid + 1;
-        }else {
-            // search in left part
+        } // if the target is smaller ignore right part
+        else {
             end = mid - 1;
         }
     }
-    return -1
+    return result;
 }
 
 
@@ -36,7 +40,7 @@ function binarySearchRecursive(arr, start, end, target) {
 }
 
 // Example
-let arr = [3, 4, 6, 7, 9, 12, 16, 17];
+let arr = [3, 4, 6, 7, 9, 10, 12, 12, 12, 16, 17];
 
 let target = 12;
 let ans1 = binarySearchIterative(arr, target)

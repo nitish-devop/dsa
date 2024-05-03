@@ -10,7 +10,6 @@ var groupAnagrams = function(strs) {
             map.set(str, [element])
         }
     })
-   
     return [...map.values()]
 };
 

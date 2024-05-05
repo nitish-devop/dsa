@@ -19,10 +19,32 @@ const productOfNumbers = function(nums) {
     for(let i = 0; i < nums.length; i++) {
         ans[i] = left[i] * right[i];
     }
-
-    console.log(ans)
-
-    
+    return ans;
 }
 
-productOfNumbers([1,2,3,4])
+
+// solve in O(1) space complexity
+
+const productOfNumbers2 = function(nums) {
+   
+    let ans = Array(nums.length).fill(0);
+
+    // store sum of left element
+    let temp = 1;
+    for(let i = 0; i < nums.length; i++) {
+        ans[i] =  temp;
+        temp = temp * nums[i];
+    }
+    console.log(ans)
+    temp = 1;
+    for(let i = nums.length -1; i >= 0; i--) {
+        ans[i] = ans[i] * temp;
+      
+        temp = temp * nums[i];
+    }
+    console.log(ans);
+    return ans;
+}
+
+productOfNumbers2([1,2,3,4]);
+

@@ -1,0 +1,2 @@
+# Ignore all .class files, regardless of directory
+*.class

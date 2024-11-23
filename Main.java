@@ -1,11 +1,12 @@
-import Patterns.SquarePattern;
+
+import Patterns.TriangularPattern;
 
 public class Main {
     public static void main(String[] args) {
-        SquarePattern squarePatternObj = new SquarePattern(4);
-        squarePatternObj.patternType1();
-        squarePatternObj.patternType2();
-        squarePatternObj.patternType3();
+        TriangularPattern patternObj = new TriangularPattern(4);
+        patternObj.patternType1();
+        patternObj.patternType2();
+        patternObj.patternType3();
     }
     
 }
